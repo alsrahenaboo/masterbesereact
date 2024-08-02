@@ -1,0 +1,63 @@
+.fot-contaner{
+    height: 70vh;
+    width: 100%;
+    background-image: url(../imges/footimg.png);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius:  0 3% ;
+    /* padding: 20px; */
+    color: white;
+   
+}
+.fot-contaner .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.fot-contaner .about-us, .fot-contaner .links, .fot-contaner .contact-info {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.fot-contaner .about-us h5, .fot-contaner .links h5, .fot-contaner .contact-info h5 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.fot-contaner .social-icons i {
+    margin-right: 10px;
+}
+
+.fot-contaner .footer-bottom {
+    font-size: 20px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(91, 94, 94);
+    text-align: center;
+  
+}
+.links{
+    
+}
+.about-us p{
+    font-size: 22px;
+}
+.links li {
+    font-size: 20px;
+
+}
+button{
+  color: white;
+  background-color: red;
+  font-size: 30px;
+  width: 300px;
+  border-radius: 25%;
+  margin-top: 40px;
+  margin-left: 35%;
+ 
+}
