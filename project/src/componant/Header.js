@@ -48,19 +48,19 @@ function Header () {
       <nav className="main-nav">
         <ul>
           <li>
-            <Link to="/hardwood">Hardwood</Link>
+            <Link to="/Hardwood">Hardwood</Link>
           </li>
           <li>
-            <Link to="/vinyl">Vinyl</Link>
+            <Link to="/Vinyl">Vinyl</Link>
           </li>
           <li>
-            <Link to="/laminate">Laminate</Link>
+            <Link to="/Laminate">Laminate</Link>
           </li>
           <li>
-            <Link to="/carpet">Carpet</Link>
+            <Link to="/Larpet">Carpet</Link>
           </li>
           <li>
-            <Link to="/tiles">Tiles</Link>
+            <Link to="/Tiles">Tiles</Link>
           </li>
           <li>
             <Link to="#">Our services</Link>

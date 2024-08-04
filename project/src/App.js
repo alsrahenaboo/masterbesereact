@@ -17,9 +17,6 @@ import Footer from './componant/Footer';
 import Carpet from './pages/Carpet';
 import Tiles from './pages/Tiles';
 import Contact from './pages/Contact';
-import Baye from './componant/sherdcom.js/sectionpay';
-import CardHome from './componant/sherdcom.js/CardHome';
-import ProductCard from './componant/sherdcom.js/CardsServes';
 
 
 
@@ -31,13 +28,13 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/carpet" element={<Carpet />} />
+          <Route path="/Carpet" element={<Carpet />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/hardwood" element={<Hardwood />} />
+          <Route path="/Hardwood" element={<Hardwood />} />
           <Route path="/" element={<Home />} />
-          <Route path="/laminate" element={<Laminate />} />
-          <Route path="/tiles" element={<Tiles />} />
-          <Route path="/vinyl" element={<Vinyl />} />
+          <Route path="/Laminate" element={<Laminate />} />
+          <Route path="/Tiles" element={<Tiles />} />
+          <Route path="/Vinyl" element={<Vinyl />} />
         </Routes>
         <Footer />
       </BrowserRouter>

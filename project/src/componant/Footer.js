@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -29,13 +30,27 @@ function Footer () {
             <div className="links">
               <h5>Links</h5>
               <ul>
-                <li>Hardwood</li>
-                <li>Vinyl</li>
-                <li>Laminate</li>
-                <li>Carpet</li>
-                <li>Tiles</li>
-                <li>Installations project</li>
-                <li>Contact Us</li>
+                <li>
+                  <Link to="/Hardwood">Hardwood</Link>
+                </li>
+                <li>
+                  <Link to="/Vinyl">Vinyl</Link>
+                </li>
+                <li>
+                  <Link to="/Laminate">Laminate</Link>
+                </li>
+                <li>
+                  <Link to="/Carpet">Carpet</Link>
+                </li>
+                <li>
+                  <Link to="/Tiles">Tiles</Link>
+                </li>
+                <li>
+                  <Link to="/Installations">Installations project</Link>
+                </li>
+                <li>
+                  <Link to="/Contact">Contact Us</Link>
+                </li>
               </ul>
             </div>
             <div className="contact-info">

@@ -78,7 +78,7 @@
 
 .buy-button {
   margin-left: 7%;
-  background-color: #BBBBBB;
+  background-color:  #306b24;
   color: white;
   border: none;
   width: 40%;
@@ -86,5 +86,5 @@
 }
 
 .buy-button:hover {
-  background-color: #868686;
+  background-color: #0de92a;
 }
