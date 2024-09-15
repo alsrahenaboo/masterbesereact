@@ -28,7 +28,7 @@
   font-size: 30px;
   padding: 40px;
 }
-h1 {
+ .contener h1 {
   margin-bottom: 100px;
   margin-top: 151px;
   text-align: center;
@@ -43,7 +43,7 @@ h1 {
   margin-top: 100px;
 }
 .hero2 img {
-  width: 900px;
+  width: 50%;
   height: 699%;
 }
 .hero2 p {
@@ -61,11 +61,12 @@ span {
   display: flex;
   justify-content: flex-start;
   align-items: end;
-  gap:100px;
+  gap: 100px;
   flex-wrap: wrap;
 }
 
 .flooring-cards {
+  width: 26%;
   text-align: center;
   border: 1px solid #ddd;
   position: relative;
@@ -73,28 +74,26 @@ span {
 
 .textincards {
   position: absolute;
-  bottom: 20px;
+  bottom: 0;  
   z-index: 2;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;  
+  width: 100%;  
   display: flex;
   align-items: center;
   color: white;
-   background-color: rgb(121, 128, 128);
-   width: 100%;
-   justify-content: center;
-   gap: 1rem;
+  background-color: rgba(121, 128, 128, 0.7); 
+  justify-content: center;
+  gap: 1rem;
+  padding: 10px 0;  
 }
 
-.flooring-card img {
-  max-width: 100%;
+.flooring-cards img {
+  width: 100%; 
   height: auto;
 }
 
 .textincards a {
-   
   color: white;
-
   text-decoration: none;
 }
 
@@ -131,4 +130,42 @@ span {
 .works p{
   font-size: 19px;
 
+}
+.myworks{
+  margin-left: 40px;
+   width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  gap:100px;
+  flex-wrap: wrap;
+}
+.ins{
+  text-align: center;
+}
+
+
+
+
+@media screen and (min-width: 1024px) {
+  .hero p, .hero2 p {
+    font-size: 30px;
+  }
+
+  .contener h1 {
+    margin-bottom: 100px;
+    margin-top: 150px;
+  }
+
+  .typeofservice h5 {
+    font-size: 30px;
+  }
+
+  .typeofservice {
+    font-size: 20px;
+  }
+
+  .works p {
+    font-size: 19px;
+  }
 }

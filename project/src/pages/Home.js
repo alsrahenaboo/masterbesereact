@@ -1,4 +1,5 @@
 import CardHome from "../componant/sherdcom.js/CardHome";
+import { Link } from "react-router-dom";
 
 
 
@@ -18,7 +19,9 @@ function Home (){
               flooring brands. .
             </p>
           </div>
-          <h1>Why Choose Azazma Floors?</h1>
+          <h1>
+            Why Choose <span>Azazma Floors?</span>
+          </h1>
           <div className="hero2">
             <img src={require("../imges/imagehero2.jpeg")} alt="hero2" />
             <p>
@@ -39,33 +42,38 @@ function Home (){
           <div className="flooring-categories">
             <CardHome
               url={require("../imges/Rectangle 12.png")}
-              title={"Hardwood Flooring"}
+              title="Hardwood Flooring"
+              path="/Hardwood"
             />
 
             <CardHome
               url={require("../imges/Group 33.png")}
               title={"Vinyl  Flooring "}
+              path="/Vinyl"
             />
 
             <CardHome
               url={require("../imges/3a.png")}
               title={"Laminate  Flooring "}
+              path="/Laminate"
             />
 
             <CardHome
               url={require("../imges/4a.png")}
               title={"Carpet Flooring"}
+              path="/Carpet"
             />
 
             <CardHome
               url={require("../imges/5a.png")}
               title={"Tiles  Flooring "}
+              path={"/Tiles"}
             />
           </div>
           <div className="imgandtext">
-            <img src={require("../imges/Rectangle 9.png")} />
-            <img src={require("../imges/Rectangle 10.png")} />
-            <img src={require("../imges/Rectangle 11.png")} />
+            <img src={require("../imges/Rectangle 9.png")} alt="" />
+            <img src={require("../imges/Rectangle 10.png")} alt="" />
+            {/* <img src={require("../imges/Rectangle 11.png")} alt="" /> */}
             <div className="typeofservice">
               <h5>
                 Hardwood, Engineered Hardwood, Laminate & Vinyl Flooring For
@@ -85,34 +93,43 @@ function Home (){
           </h1>
           <div className="mywork">
             <div className="works">
-              <img src={require("../imges/m1.png")} />
+              <img src={require("../imges/m1.png")} alt="" />
               <p>Vinyl Flooring Installation in North York</p>
             </div>
             <div className="works">
-              <img src={require("../imges/m2.png")} />
+              <img src={require("../imges/m2.png")} alt="" />
               <p>Vinyl Flooring Installation in North York</p>
             </div>
             <div className="works">
-              <img src={require("../imges/m3.png")} />
+              <img src={require("../imges/m3.png")} alt="" />
               <p>Vinyl Flooring Installation in North York</p>
             </div>
             <div className="works">
-              <img src={require("../imges/m4.png")} />
+              <img src={require("../imges/m4.png")} alt="" />
               <p>Vinyl Flooring Installation in North York</p>
             </div>
             <div className="works">
-              <img src={require("../imges/m5.png")} />
+              <img src={require("../imges/m5.png")} alt="" />
               <p>Vinyl Flooring Installation in North York</p>
             </div>
             <div className="works">
-              <img src={require("../imges/m6.png")} />
+              <img src={require("../imges/m6.png")} alt="" />
               <p>Vinyl Flooring Installation in North York</p>
             </div>
           </div>
-          <button>View all</button>
+          <Link to="/Installation">
+            <button>View all</button>
+          </Link>
         </div>
       </>
     );
 }
 
 export default Home
+
+
+// const User = sequelize.define('User',);
+// const Profile = sequelize.define('Profile',);
+
+// User.hasOne(Profile); // كل مستخدم لديه ملف تعريف واحد
+// Profile.belongsTo(User); // كل ملف تعريف ينتمي إلى مستخدم واحد

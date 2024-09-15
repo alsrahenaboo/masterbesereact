@@ -3,12 +3,9 @@ import { MdOutlineLocalPhone } from "react-icons/md";
 import { IoMdSearch } from "react-icons/io";
 import { CiFacebook } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
-import{ Link } from 'react-router-dom'
-
-
+import { Link } from 'react-router-dom';
 
 function Header () {
-  
   return (
     <header>
       <div className="header-top">
@@ -19,13 +16,21 @@ function Header () {
           </span>
         </Link>
         <div className="nav-buttons">
+          <nav className="auth-nav">
+            <Link to="/signup" className="nav-button">
+              Sign Up
+            </Link>
+            <Link to="/login" className="nav-button">
+              Login
+            </Link>
+          </nav>  
           <Link to="/" className="nav-button">
             Home
           </Link>
-          <Link to="#" className="nav-button">
+          <Link to="/Reviews" className="nav-button">
             Reviews
           </Link>
-          <Link to ="/Contact" className="nav-button">
+          <Link to="/Contact" className="nav-button">
             Contact
           </Link>
           <div className="search-container">
@@ -45,6 +50,7 @@ function Header () {
           </Link>
         </div>
       </div>
+
       <nav className="main-nav">
         <ul>
           <li>
@@ -57,7 +63,7 @@ function Header () {
             <Link to="/Laminate">Laminate</Link>
           </li>
           <li>
-            <Link to="/Larpet">Carpet</Link>
+            <Link to="/Carpet">Carpet</Link>
           </li>
           <li>
             <Link to="/Tiles">Tiles</Link>
@@ -75,8 +81,10 @@ function Header () {
           </li>
         </ul>
       </nav>
+
+      {/* الروابط الجديدة لتسجيل الدخول والتسجيل */}
     </header>
   );
-};
+}
 
 export default Header;

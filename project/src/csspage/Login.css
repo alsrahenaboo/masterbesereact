@@ -1,0 +1,231 @@
+/* Login.css */
+.login-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f0f2f5;
+  overflow: hidden;
+}
+
+.login-image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1877f2;
+  padding: 2rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0));
+  z-index: 1;
+}
+
+.login-image img {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.login-image h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.auth-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background-color: white;
+  box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+}
+
+.auth-form h2 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.auth-form form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #1877f2;
+  box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.2);
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-form button:hover {
+  background-color: #166fe5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(24, 119, 242, 0.3);
+}
+
+.auth-form button:active {
+  transform: translateY(0);
+}
+
+.error-message {
+  color: #d32f2f;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.signup-link {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.signup-link a {
+  color: #1877f2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+  color: #166fe5;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-image, .auth-form {
+    flex: none;
+    width: 100%;
+  }
+
+  .login-image {
+    padding: 2rem;
+    height: 40vh;
+  }
+
+  .login-image img {
+    max-width: 60%;
+  }
+
+  .login-image h2 {
+    font-size: 2rem;
+  }
+
+  .auth-form {
+    padding: 2rem;
+    box-shadow: none;
+  }
+
+  .auth-form h2 {
+    font-size: 2rem;
+  }
+}
+
+/* إضافات جديدة لتحسين التجربة */
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 0.5rem;
+  width: auto;
+}
+
+.remember-me label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.auth-form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.auth-form input, .auth-form button {
+  transition: all 0.3s ease;
+}
+
+.auth-form input:hover, .auth-form button:hover {
+  transform: translateY(-2px);
+}
+
+.auth-form input:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(24, 119, 242, 0.2);
+}
+
+/* إضافة تأثير الظل عند التمرير */
+.login-container {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* تحسين قابلية القراءة */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* إضافة خلفية متدرجة للصفحة */
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}

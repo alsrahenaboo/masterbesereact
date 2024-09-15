@@ -60,7 +60,7 @@ function Footer () {
           </div>
           <div className="footer-bottom">
             <p>
-              Copyright 2024 © Flooring Liquidators | Terms and Conditions |
+              Copyright 2024 © Azazma Flooring | Terms and Conditions |
               Privacy Policy
             </p>
           </div>
