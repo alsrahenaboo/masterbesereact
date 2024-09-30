@@ -1,9 +1,15 @@
-// routes/productRoutes.js
 const express = require("express");
-const router = express.Router();
-const productController = require("../controllers/productController");
+const {
+  getProducts,
+  getProductById,
+} = require("../controllers/productController");
 
-router.get("/", productController.getAllProducts);
-router.post("/", productController.createProduct);
+const router = express.Router();
+
+// Route to get all products (with optional category filtering)
+router.get("/products", getProducts);
+
+// Route to get a product by ID
+router.get("/products/:id", getProductById);
 
 module.exports = router;
