@@ -1,131 +1,162 @@
-
-
-
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import Baye from "../componant/sherdcom.js/sectionpay";
 import ProductCard from "../componant/sherdcom.js/CardsServes";
 
 function Tiles() {
-  return (
-    <>
-      <Baye
-        url={require("../imges/hardoodhero.png")}
-        titl={"Tiles Flooring"}
-      />
-      <div className="contener">
-        <Link to="/">
-          <span>Home &gt;&gt;</span>
-        </Link>
-        Tiles Flooring
-        <div className="explan">
-          <div className="explan-hardwood">
-            <p>
-              It is a type of flooring in which tiles are used as a covering
-              material. Tiles come in a variety of materials such as ceramic,
-              porcelain, natural stone, and glass. Tiles are a popular choice
-              for flooring in homes and commercial buildings due to their many
-              advantages such as durability, ease of maintenance and cleaning,
-              and resistance to water and moisture.
-            </p>
-            <h1>What Is Tiles Flooring?</h1>
-            <p>
-              refers to the installation of tiles as a floor covering. Tiles can
-              be made from a variety of materials including ceramic, porcelain,
-              stone, glass, and even certain types of vinyl. This type of
-              flooring is popular in both residential and commercial settings
-              due to its durability, versatility, and aesthetic
-              appeal.Durability:Tiles, especially ceramic and porcelain, are
-              known for their strength and ability to withstand heavy foot
-              traffic. They are resistant to scratches, dents, and wear, making
-              them ideal for high-traffic areas. Ease of Maintenance:Tiles are
-              easy to clean and maintain. They resist stains, spills, and water,
-              which makes them perfect for kitchens, bathrooms, and other areas
-              prone to moisture. Regular sweeping and mopping are usually
-              sufficient to keep tile floors looking new.
-            </p>
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]); // حالة سلة المشتريات
+
+  useEffect(() => {
+    // جلب المنتجات من الخادم (Tiles)
+    const fetchProducts = () => {
+      axios
+        .get("http://localhost:5000/api/products?category=Tiles")
+        .then((response) => {
+          console.log(response.data);
+          setProducts(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching products:", error);
+        });
+    };
+
+    fetchProducts(); // جلب المنتجات عند تحميل المكون
+  }, []);
+
+  // دالة لإضافة المنتج إلى السلة
+  const addToCart = (product) => {
+    const existingProduct = cart.find((item) => item._id === product._id);
+
+    if (existingProduct) {
+      // تحديث الكمية إذا كان المنتج موجود بالفعل في السلة
+      setCart(
+        cart.map((item) =>
+          item._id === product._id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      // إضافة المنتج إلى السلة مع كمية ابتدائية 1
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
+  };
+
+  // دالة لتحديث كمية المنتج في السلة
+  const updateQuantity = (productId, amount) => {
+    setCart(
+      cart.map((item) =>
+        item._id === productId
+          ? { ...item, quantity: Math.max(1, item.quantity + amount) } // التأكد من عدم وجود كميات سلبية
+          : item
+      )
+    );
+  };
+
+  // دالة لعرض المنتجات في السلة
+  const renderCart = () => {
+    return (
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 className="text-2xl font-bold mb-4">Cart Items</h2>
+        {cart.map((item) => (
+          <div
+            key={item._id}
+            className="mb-4 flex justify-between items-center"
+          >
+            <p>{item.name}</p>
+            <p>Quantity: {item.quantity}</p>
+            <p>Price: ${item.price}</p>
+            <p>Total: ${item.quantity * item.price}</p>
+            <div className="flex space-x-2">
+              <button
+                className="bg-green-500 text-white px-2 py-1 rounded"
+                onClick={() => updateQuantity(item._id, 1)}
+              >
+                +
+              </button>
+              <button
+                className="bg-red-500 text-white px-2 py-1 rounded"
+                onClick={() => updateQuantity(item._id, -1)}
+              >
+                -
+              </button>
+            </div>
           </div>
-          <div className="img-hardwood">
-            <img src={require("../imges/tils.png")} alt="lam" />
-          </div>
-        </div>
-        <div className="product">
-          <ProductCard
-            url={require("../imges/til1.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/til2.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/til3.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/til4.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/til5.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/til6.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/til7.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/til8.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/til9.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/til10.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/til11.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/til12.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-        </div>
+        ))}
       </div>
-    </>
+    );
+  };
+
+  return (
+    <div className="bg-gray-100 min-h-screen">
+      <Baye url={require("../imges/hardoodhero.png")} titl="Tiles Flooring" />
+      <div className="container mx-auto px-4 py-8">
+        {/* Breadcrumb Navigation */}
+        <nav className="text-sm mb-6">
+          <Link to="/" className="text-green-600 hover:text-green-800">
+            Home
+          </Link>
+          <span className="mx-2">&gt;</span>
+          <span className="text-gray-600">Tiles Flooring</span>
+        </nav>
+
+        {/* Explanation Section */}
+        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+          <div className="md:flex items-center">
+            <div className="md:w-2/3 pr-8">
+              <h2 className="text-3xl md:text-2xl font-bold text-gray-800 mb-4">
+                Tiles Flooring
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                Tiles are a popular flooring option due to their durability,
+                ease of maintenance, and aesthetic appeal. Available in various
+                materials such as ceramic, porcelain, and stone, tiles are
+                perfect for areas prone to moisture like kitchens and bathrooms.
+              </p>
+              <h1 className="text-2xl font-bold text-gray-800 mt-4">
+                What Is Tiles Flooring?
+              </h1>
+              <p className="text-gray-600 leading-relaxed">
+                Tiles flooring involves the installation of tiles made from
+                different materials like ceramic, porcelain, and glass. Known
+                for their strength, resistance to wear, and easy maintenance,
+                tiles are widely used in both residential and commercial spaces.
+              </p>
+            </div>
+            <div className="md:w-1/3 mt-4 md:mt-0">
+              <img
+                src={require("../imges/tils.png")}
+                alt="Tiles section"
+                className="w-full h-auto rounded-lg shadow-md object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Products Section */}
+        <h2 className="text-3xl md:text-2xl font-bold text-gray-800 mb-6">
+          Our Products
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {products.map((product) => (
+            <ProductCard
+              key={product._id}
+              url={product.imageUrl}
+              name={product.name}
+              description={product.description}
+              salePrice={product.price}
+              onAddToCart={() => addToCart(product)} // إضافة المنتج إلى السلة عند النقر
+            />
+          ))}
+        </div>
+
+        {/* عرض سلة المشتريات */}
+        {renderCart()}
+      </div>
+    </div>
   );
 }
+
 export default Tiles;

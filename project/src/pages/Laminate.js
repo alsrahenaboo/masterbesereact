@@ -1,121 +1,95 @@
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import Baye from "../componant/sherdcom.js/sectionpay";
 import ProductCard from "../componant/sherdcom.js/CardsServes";
 
 function Laminat() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    // Fetch products for Laminate category
+    const fetchProducts = () => {
+      axios
+        .get(`http://localhost:5000/api/products?category=Laminate`)
+        .then((response) => {
+          setProducts(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching products:", error);
+        });
+    };
+
+    fetchProducts(); // Fetch products on component mount
+  }, []);
+
   return (
-    <>
-      <Baye url={require("../imges/laminat.png")} titl={"Laminat Flooring"} />
-      <div className="contener">
-        <Link to="/">
-          <span>Home &gt;&gt;</span>
-        </Link>
-        Laminat Flooring
-        <div className="explan">
-          <div className="explan-hardwood">
-            <p>
-              Laminate flooring is an excellent choice when you have a
-              restricted budget but still want your home to look fabulous. These
-              days you can find laminate flooring that not only mimics the look
-              of its natural counterparts but also their texture, making it even
-              more appealing. From domestic to commercial spaces, this popular
-              flooring material is versatile enough to be used in any part of
-              the house and requires minimum maintenance.
-            </p>
-            <h1>What Is LaminatFlooring?</h1>
-            <p>
-              Laminate flooring is made with wooden materials that are bonded
-              with pressure and resins. The top layer is a high definition image
-              of the natural product it mimics. While the surface is water
-              resistant, the base of these boards and planks is susceptible to
-              water damage if spills are not cleaned quick enough. Laminate can
-              be used in any part of the house apart from the bathroom. It is
-              hassle free and easy to clean, and with proper cleaning, you can
-              keep it as good as new for decades.
-            </p>
-          </div>
-          <div className="img-hardwood">
-            <img src={require("../imges/lm.png")} alt="lam" />
+    <div className="bg-gray-100 min-h-screen">
+      <Baye url={require("../imges/laminat.png")} titl="Laminat Flooring" />
+
+      <div className="container mx-auto px-4 py-8">
+        {/* Breadcrumb Navigation */}
+        <nav className="text-sm mb-6">
+          <Link to="/" className="text-green-600 hover:text-green-800">
+            Home
+          </Link>
+          <span className="mx-2">&gt;</span>
+          <span className="text-gray-600">Laminat Flooring</span>
+        </nav>
+
+        {/* Explanation Section */}
+        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+          <div className="md:flex items-center">
+            <div className="md:w-2/3 pr-8">
+              <h2 className="text-3xl md:text-2xl font-bold text-gray-800 mb-4">
+                Laminat Flooring
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                Laminate flooring is an excellent choice when you have a
+                restricted budget but still want your home to look fabulous.
+                These days you can find laminate flooring that not only mimics
+                the look of its natural counterparts but also their texture,
+                making it even more appealing.
+              </p>
+              <h1 className="text-2xl font-bold text-gray-800 mt-4">
+                What Is Laminat Flooring?
+              </h1>
+              <p className="text-gray-600 leading-relaxed">
+                Laminate flooring is made with wooden materials that are bonded
+                with pressure and resins. The top layer is a high definition
+                image of the natural product it mimics. It’s hassle-free and
+                easy to clean.
+              </p>
+            </div>
+            <div className="md:w-1/3 mt-4 md:mt-0">
+              <img
+                src={require("../imges/lm.png")}
+                alt="Laminate Flooring"
+                className="w-full h-auto rounded-lg shadow-md object-cover"
+              />
+            </div>
           </div>
         </div>
-        <div className="product">
-          <ProductCard
-            url={require("../imges/lam1.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/lam2.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/lam3.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/lam4.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/lam5.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/lam6.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/lam7.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/lam8.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/lam9.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/lam10.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/lam11.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
-          <ProductCard
-            url={require("../imges/lam12.png")}
-            name={"Europe Parks Collection 8MM Engineered Hardwood – Saxon"}
-            Price={4.99}
-            salePrice={3.49}
-          />
+
+        {/* Products Section */}
+        <h2 className="text-3xl md:text-2xl font-bold text-gray-800 mb-6">
+          Our Products
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {products.map((product) => (
+            <ProductCard
+              key={product._id}
+              id={product._id}
+              url={product.imageUrl}
+              name={product.name}
+              description={product.description}
+              salePrice={product.price}
+            />
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
+
 export default Laminat;

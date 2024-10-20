@@ -29,6 +29,12 @@ const categorySeedData = [
     imageUrl: "https://example.com/vinyl.jpg",
     isActive: true,
   },
+  {
+    name: "Tiles", // الفئة الجديدة
+    description: "Durable and stylish tiles for flooring",
+    imageUrl: "https://example.com/tiles.jpg",
+    isActive: true,
+  },
 ];
 
 const productSeedData = [
@@ -99,8 +105,8 @@ async function seedDatabase() {
     await connectDB();
 
     // حذف البيانات الحالية
-    await Category.deleteMany({});
-    await Product.deleteMany({});
+    // await Category.deleteMany({});
+    // await Product.deleteMany({});
 
     // إضافة الفئات
     const categories = await Category.create(categorySeedData);

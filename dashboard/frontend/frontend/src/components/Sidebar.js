@@ -17,6 +17,21 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
+          <Link to="/users" className="block py-2 hover:bg-gray-700">
+            users
+          </Link>
+        </li>
+        <li>
+          <Link to="/orders" className="block py-2 hover:bg-gray-700">
+            orders
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact" className="block py-2 hover:bg-gray-700">
+            contact 
+          </Link>
+        </li>
+        <li>
           <Link
             to="/"
             onClick={() => localStorage.removeItem("token")}
