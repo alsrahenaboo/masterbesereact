@@ -74,6 +74,6 @@ Azazma Flooring centralizes essential services for easy access:
 
 - **Live Site:** [Azazma Flooring](http://localhost:3000/)
 - **Presentation:** [Google Docs Presentation](https://docs.google.com/document/d/10GH10i-8geUtRPiwvXtLkgIxr97Cw5fv8hOKTP48SFQ/edit?tab=t.0))
-- **Documentation:** [https://example.com](https://docs.google.com/document/d/1kIRp28cY4kgkvsnHT6yKH-D1-qp6T0k03ZUrPO3OYoM/edit?tab=t.0])
-- **Design (Figma):** [Figma Design File]([https://www.figma.com/design/lyXOQdb1yTfMzTDmh6R39x/Untitled?node-id=0-1&t=FwqVzeeTSc7uXawu-1])
+- **Documentation:** [https://example.com](https://docs.google.com/document/d/1kIRp28cY4kgkvsnHT6yKH-D1-qp6T0k03ZUrPO3OYoM/edit?tab=t.0)
+- **Design (Figma):** [Figma Design File](https://www.figma.com/design/lyXOQdb1yTfMzTDmh6R39x/Untitled?node-id=0-1&t=FwqVzeeTSc7uXawu-1)
 - **Trello (Trello):** [Trello]-([https://trello.com/b/ggEFtpRR/master-piece?search_id=58c12bd1-f57a-4d2c-b7f1-b39ee3e99a00])
