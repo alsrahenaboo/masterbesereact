@@ -68,18 +68,20 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import AuthLayout from "./componant/AuthLayout";
 import Cart from "./componant/Cart";
-import CheckoutSuccess from "./pages/CheckoutSuccess";
+// import CheckoutSuccess from "./pages/CheckoutSuccess";
 import Checkout from "./componant/CheckoutPage"
 
 
 
-import "./csspage/Header.css";
-import "./csspage/Home.css";
-import "./App.css";
-import "./csspage/Footer.css";
-import "./csspage/Hardwood.css";
-import "./csspage/Contact.css";
+// import "./csspage/Header.css";
+// import "./csspage/Home.css";
+// import "./App.css";
+// import "./csspage/Footer.css";
+// import "./csspage/Hardwood.css";
+// import "./csspage/Contact.css";
 import OrderSuccess from "./componant/OrderSuccess";
+import Profile from "./pages/profile";
+import MyOrder from "./pages/myOrder";
 
 
 
@@ -113,9 +115,11 @@ function App() {
           <Route path="/Vinyl" element={<Vinyl />} />
           <Route path="/Reviews" element={<Reviews />} />
           <Route path="/Installation" element={<Installation />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/orders" element={<MyOrder />} />
 
           <Route path="/Cart" element={<Cart />} />
-          <Route path="/CheckoutSuccess" element={<CheckoutSuccess />} />
+          {/* <Route path="/CheckoutSuccess" element={<CheckoutSuccess />} /> */}
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/order-success" element={<OrderSuccess />} />
         </Route>

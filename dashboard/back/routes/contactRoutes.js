@@ -14,4 +14,5 @@ router.delete("/contacts/:id", contactController.deleteContact);
 // PUT to toggle active status of a contact
 router.put("/contacts/:id/toggle-status", contactController.toggleActiveStatus);
 
+
 module.exports = router;

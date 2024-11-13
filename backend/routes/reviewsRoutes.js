@@ -1,16 +1,41 @@
-// routes/reviewsRoutes.js
+
+
+
+// const express = require("express");
+// const router = express.Router();
+// const reviewController = require("../controllers/reviewsController");
+// const authMiddleware = require("../middleware/authMiddleware");
+
+// // Get all reviews
+// router.get("/", reviewController.getAllReviews);
+
+// // Create a new review (protected route)
+// router.post("/", authMiddleware, reviewController.createReview);
+
+// // Update a review (protected route)
+// router.put("/:id", authMiddleware, reviewController.updateReview);
+
+// // Delete a review (protected route)
+// router.delete("/:id", authMiddleware, reviewController.deleteReview);
+
+// module.exports = router;
+
 const express = require("express");
 const router = express.Router();
-const reviewsController = require("../controllers/reviewsController");
-const authMiddleware = require("../middleware/authMiddleware");
+const  authMiddleware  = require("../Middleware/authMiddleware"); // Assuming you have authentication middleware
+const {
+  getAllReviews,
+  createReview,
+  updateReview,
+  deleteReview,
+} = require("../controllers/reviewsController");
 
-// إضافة مراجعة جديدة (يجب أن يكون المستخدم مسجل الدخول)
-router.post("/add", authMiddleware, reviewsController.addReview);
+// Public routes
+router.get("/", getAllReviews);
 
-// جلب جميع المراجعات
-router.get("/", reviewsController.getAllReviews);
-
-// جلب المراجعات حسب المنتج
-router.get("/product/:productId", reviewsController.getReviewsByProduct);
+// Protected routes (require authentication)
+router.post("/",authMiddleware, createReview);
+router.put("/:id",authMiddleware,  updateReview);
+router.delete("/:id",authMiddleware,  deleteReview);
 
 module.exports = router;

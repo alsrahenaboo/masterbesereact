@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Sidebar from "./Sidebar";
+import ProductForm from "./ProductForm";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -98,8 +99,10 @@ const Products = () => {
   return (
     <>
       <Sidebar />
+
       <div className="p-6 pl-80">
         <h2 className="text-2xl font-bold mb-4">Products</h2>
+        <ProductForm />
         {editingProduct ? (
           <form onSubmit={handleUpdate} className="mb-6">
             <h3 className="text-xl font-bold mb-2">Edit Product</h3>

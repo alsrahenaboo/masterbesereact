@@ -1,4 +1,4 @@
-// // routes/orderRoutes.js
+
 
 // const express = require("express");
 // const router = express.Router();
@@ -7,9 +7,16 @@
 // // Get all orders
 // router.get("/orders", orderController.getAllOrders);
 
+// // Update an order
+// router.put("/orders/:id", orderController.updateOrder);
+
+// // Soft delete an order
+// router.delete("/orders/:id", orderController.softDeleteOrder);
+
 // module.exports = router;
-// routes/orderRoutes.js
-// routes/orderRoutes.js
+
+
+
 
 const express = require("express");
 const router = express.Router();

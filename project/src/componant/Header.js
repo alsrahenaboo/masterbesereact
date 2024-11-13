@@ -1,69 +1,540 @@
-import React from "react";
+
+
+// import React, { useState, useEffect } from "react";
+// import { MdOutlineLocalPhone } from "react-icons/md";
+// // import { AiOutlineShoppingCart } from "react-icons/ai"; // Import shopping cart icon
+// import { Link, useNavigate } from "react-router-dom";
+// import { MdPerson } from "react-icons/md";
+// import { AiOutlineShoppingCart, AiOutlineLogout } from "react-icons/ai";
+
+// function Header() {
+//   const [isAuthenticated, setIsAuthenticated] = useState(false);
+//   const [showProfileMenu, setShowProfileMenu] = useState(false);
+//   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     // Check if user is logged in
+//     const token = localStorage.getItem("token");
+//     setIsAuthenticated(!!token);
+//   }, []);
+
+//   const handleLogout = () => {
+//     localStorage.removeItem("token");
+//     localStorage.removeItem("userId");
+//     setIsAuthenticated(false);
+//     navigate("/login");
+//   };
+//   return (
+//     <header className="bg-white shadow sticky top-0 z-10">
+//       <div className="flex items-center justify-between px-5 py-3 bg-white text-primary">
+//         <div className="flex items-center space-x-4">
+//           <img
+//             src={require("../imges/logo.jpeg")}
+//             alt="Logo"
+//             className="h-12 w-20 rounded-full"
+//           />
+//           <Link
+//             to="#"
+//             className="flex items-center text-base no-underline text-gray-800"
+//           >
+//             <MdOutlineLocalPhone className="mr-1" /> (437) 265-0978
+//           </Link>
+//         </div>
+
+//         <div className="flex items-center space-x-3">
+//           <nav className="space-x-3 flex items-center">
+//             <Link
+//               to="/"
+//               className="bg-green-700 text-white px-4 py-2 rounded-md"
+//             >
+//               Home
+//             </Link>
+//             <Link
+//               to="/Reviews"
+//               className="bg-green-700 text-white px-4 py-2 rounded-md"
+//             >
+//               Reviews
+//             </Link>
+//             <Link
+//               to="/Contact"
+//               className="bg-green-700 text-white px-4 py-2 rounded-md"
+//             >
+//               Contact
+//             </Link>
+
+//             {isAuthenticated ? (
+//               <>
+//                 <div className="relative">
+//                   <button
+//                     onClick={() => setShowProfileMenu(!showProfileMenu)}
+//                     className="bg-green-700 text-white p-2 rounded-full hover:bg-green-800"
+//                   >
+//                     <MdPerson className="w-5 h-5" />
+//                   </button>
+
+//                   {showProfileMenu && (
+//                     <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+//                       <Link
+//                         to="/profile"
+//                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+//                       >
+//                         My Profile
+//                       </Link>
+//                       <Link
+//                         to="/orders"
+//                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+//                       >
+//                         My Orders
+//                       </Link>
+                      
+//                     </div>
+//                   )}
+//                 </div>
+
+//                 <Link
+//                   to="/Cart"
+//                   className="bg-green-700 text-white p-2 rounded-full hover:bg-green-800"
+//                 >
+//                   <AiOutlineShoppingCart className="w-5 h-5" />
+//                 </Link>
+
+//                 <button
+//                   onClick={handleLogout}
+//                   className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 flex items-center space-x-1"
+//                 >
+//                   <AiOutlineLogout />
+//                   <span>Logout</span>
+//                 </button>
+//               </>
+//             ) : (
+//               <Link
+//                 to="/login"
+//                 className="bg-green-700 text-white px-4 py-2 rounded-md hover:bg-green-800"
+//               >
+//                 Login
+//               </Link>
+//             )}
+//           </nav>
+//         </div>
+//       </div>
+
+//       <nav className="bg-gray-700 py-4">
+//         <ul className="flex justify-center space-x-4">
+//           <li>
+//             <Link to="/Hardwood" className="text-white px-3 py-2 no-underline">
+//               Hardwood
+//             </Link>
+//           </li>
+//           <li>
+//             <Link to="/Vinyl" className="text-white px-3 py-2 no-underline">
+//               Vinyl
+//             </Link>
+//           </li>
+//           <li>
+//             <Link to="/Laminate" className="text-white px-3 py-2 no-underline">
+//               Laminate
+//             </Link>
+//           </li>
+//           <li>
+//             <Link to="/Carpet" className="text-white px-3 py-2 no-underline">
+//               Carpet
+//             </Link>
+//           </li>
+//           <li>
+//             <Link to="/Tiles" className="text-white px-3 py-2 no-underline">
+//               Tiles
+//             </Link>
+//           </li>
+//           <li className="relative group">
+//             <Link
+//               to="/Installation"
+//               className="text-white px-3 py-2 no-underline"
+//             >
+//               Our Services
+//             </Link>
+//             <ul className="hidden group-hover:block absolute top-full left-0 bg-gray-700 text-white mt-2 w-48 shadow-lg space-y-2 p-3">
+//               <li>
+//                 <Link
+//                   to="/Installation"
+//                   className="no-underline block px-2 py-1"
+//                 >
+//                   Installation, Removal, and Repair
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link
+//                   to="/Installation"
+//                   className="no-underline block px-2 py-1"
+//                 >
+//                   Transport of Goods
+//                 </Link>
+//               </li>
+//             </ul>
+//           </li>
+//         </ul>
+//       </nav>
+//     </header>
+//   );
+// }
+
+// export default Header;
+
+
+
+
+import React, { useState, useEffect } from "react";
 import { MdOutlineLocalPhone } from "react-icons/md";
-import { AiOutlineShoppingCart } from "react-icons/ai"; // Import shopping cart icon
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { MdPerson, MdMenu, MdClose } from "react-icons/md";
+import { AiOutlineShoppingCart, AiOutlineLogout } from "react-icons/ai";
 
 function Header() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsAuthenticated(!!token);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    setIsAuthenticated(false);
+    navigate("/login");
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <header>
-      <div className="header-top">
-        <img src={require("../imges/logo.jpeg")} alt="Logo" className="logo" />
-        <Link to="#" className="phone-number">
-          <span className="phone-number">
-            <MdOutlineLocalPhone /> (437) 265-0978
-          </span>
-        </Link>
-        <div className="nav-buttons">
-          <nav className="auth-nav">
-            <Link to="/signup" className="nav-button">
-              Sign Up
+    <header className="bg-white shadow sticky top-0 z-10">
+      <div className="flex items-center justify-between px-5 py-3 bg-white text-primary">
+        <div className="flex items-center space-x-4">
+          <img
+            src={require("../imges/logo.jpeg")}
+            alt="Logo"
+            className="h-12 w-20 rounded-full"
+          />
+          <Link
+            to="#"
+            className="hidden md:flex items-center text-base no-underline text-gray-800"
+          >
+            <MdOutlineLocalPhone className="mr-1" /> (437) 265-0978
+          </Link>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-3">
+          <nav className="space-x-3 flex items-center">
+            <Link
+              to="/"
+              className="bg-green-700 text-white px-4 py-2 rounded-md"
+            >
+              Home
             </Link>
-            <Link to="/login" className="nav-button">
-              Login
+            <Link
+              to="/Reviews"
+              className="bg-green-700 text-white px-4 py-2 rounded-md"
+            >
+              Reviews
             </Link>
+            <Link
+              to="/Contact"
+              className="bg-green-700 text-white px-4 py-2 rounded-md"
+            >
+              Contact
+            </Link>
+
+            {isAuthenticated ? (
+              <>
+                <div className="relative">
+                  <button
+                    onClick={() => setShowProfileMenu(!showProfileMenu)}
+                    className="bg-green-700 text-white p-2 rounded-full hover:bg-green-800"
+                  >
+                    <MdPerson className="w-5 h-5" />
+                  </button>
+
+                  {showProfileMenu && (
+                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                      <Link
+                        to="/profile"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        My Profile
+                      </Link>
+                      <Link
+                        to="/orders"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        My Orders
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                <Link
+                  to="/Cart"
+                  className="bg-green-700 text-white p-2 rounded-full hover:bg-green-800"
+                >
+                  <AiOutlineShoppingCart className="w-5 h-5" />
+                </Link>
+
+                <button
+                  onClick={handleLogout}
+                  className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 flex items-center space-x-1"
+                >
+                  <AiOutlineLogout />
+                  <span>Logout</span>
+                </button>
+              </>
+            ) : (
+              <Link
+                to="/login"
+                className="bg-green-700 text-white px-4 py-2 rounded-md hover:bg-green-800"
+              >
+                Login
+              </Link>
+            )}
           </nav>
-          <Link to="/" className="nav-button">
-            Home
-          </Link>
-          <Link to="/Reviews" className="nav-button">
-            Reviews
-          </Link>
-          <Link to="/Contact" className="nav-button">
-            Contact
-          </Link>
-          <Link to="/Cart" className="nav-button">
-            {" "}
-            {/* Link to cart page */}
-            <AiOutlineShoppingCart /> {/* Shopping cart icon */}
-          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 text-gray-600"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? (
+            <MdClose className="h-6 w-6" />
+          ) : (
+            <MdMenu className="h-6 w-6" />
+          )}
+        </button>
+
+        {/* Mobile Menu Overlay */}
+        {isMobileMenuOpen && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={closeMobileMenu}
+          ></div>
+        )}
+
+        {/* Mobile Menu */}
+        <div
+          className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          } md:hidden z-50 overflow-y-auto`}
+        >
+          <div className="flex justify-end p-4">
+            <button onClick={closeMobileMenu}>
+              <MdClose className="h-6 w-6" />
+            </button>
+          </div>
+
+          <div className="px-4 py-2">
+            <Link to="#" className="flex items-center text-gray-800 mb-4">
+              <MdOutlineLocalPhone className="mr-1" /> (437) 265-0978
+            </Link>
+
+            {/* Mobile Navigation Links */}
+            <nav className="flex flex-col space-y-3">
+              <Link
+                to="/"
+                className="bg-green-700 text-white px-4 py-2 rounded-md text-center"
+                onClick={closeMobileMenu}
+              >
+                Home
+              </Link>
+              <Link
+                to="/Reviews"
+                className="bg-green-700 text-white px-4 py-2 rounded-md text-center"
+                onClick={closeMobileMenu}
+              >
+                Reviews
+              </Link>
+              <Link
+                to="/Contact"
+                className="bg-green-700 text-white px-4 py-2 rounded-md text-center"
+                onClick={closeMobileMenu}
+              >
+                Contact
+              </Link>
+
+              {/* Product Categories */}
+              <div className="border-t border-gray-200 pt-3 mt-3">
+                <h3 className="text-gray-600 mb-2 font-medium">Products</h3>
+                <div className="flex flex-col space-y-2">
+                  <Link
+                    to="/Hardwood"
+                    className="text-gray-700 hover:text-green-700"
+                    onClick={closeMobileMenu}
+                  >
+                    Hardwood
+                  </Link>
+                  <Link
+                    to="/Vinyl"
+                    className="text-gray-700 hover:text-green-700"
+                    onClick={closeMobileMenu}
+                  >
+                    Vinyl
+                  </Link>
+                  <Link
+                    to="/Laminate"
+                    className="text-gray-700 hover:text-green-700"
+                    onClick={closeMobileMenu}
+                  >
+                    Laminate
+                  </Link>
+                  <Link
+                    to="/Carpet"
+                    className="text-gray-700 hover:text-green-700"
+                    onClick={closeMobileMenu}
+                  >
+                    Carpet
+                  </Link>
+                  <Link
+                    to="/Tiles"
+                    className="text-gray-700 hover:text-green-700"
+                    onClick={closeMobileMenu}
+                  >
+                    Tiles
+                  </Link>
+                </div>
+              </div>
+
+              {/* Services */}
+              <div className="border-t border-gray-200 pt-3 mt-3">
+                <h3 className="text-gray-600 mb-2 font-medium">Our Services</h3>
+                <div className="flex flex-col space-y-2">
+                  <Link
+                    to="/Installation"
+                    className="text-gray-700 hover:text-green-700"
+                    onClick={closeMobileMenu}
+                  >
+                    Installation, Removal, and Repair
+                  </Link>
+                  <Link
+                    to="/Installation"
+                    className="text-gray-700 hover:text-green-700"
+                    onClick={closeMobileMenu}
+                  >
+                    Transport of Goods
+                  </Link>
+                </div>
+              </div>
+
+              {/* Auth Section */}
+              <div className="border-t border-gray-200 pt-3 mt-3">
+                {isAuthenticated ? (
+                  <>
+                    <Link
+                      to="/profile"
+                      className="block py-2 text-gray-700 hover:text-green-700"
+                      onClick={closeMobileMenu}
+                    >
+                      <div className="flex items-center">
+                        <MdPerson className="mr-2" />
+                        My Profile
+                      </div>
+                    </Link>
+                    <Link
+                      to="/orders"
+                      className="block py-2 text-gray-700 hover:text-green-700"
+                      onClick={closeMobileMenu}
+                    >
+                      My Orders
+                    </Link>
+                    <Link
+                      to="/Cart"
+                      className="block py-2 text-gray-700 hover:text-green-700"
+                      onClick={closeMobileMenu}
+                    >
+                      <div className="flex items-center">
+                        <AiOutlineShoppingCart className="mr-2" />
+                        Cart
+                      </div>
+                    </Link>
+                    <button
+                      onClick={() => {
+                        handleLogout();
+                        closeMobileMenu();
+                      }}
+                      className="flex items-center text-red-600 py-2 w-full"
+                    >
+                      <AiOutlineLogout className="mr-2" />
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <Link
+                    to="/login"
+                    className="bg-green-700 text-white px-4 py-2 rounded-md text-center block"
+                    onClick={closeMobileMenu}
+                  >
+                    Login
+                  </Link>
+                )}
+              </div>
+            </nav>
+          </div>
         </div>
       </div>
 
-      <nav className="main-nav">
-        <ul>
+      {/* Desktop Categories Nav */}
+      <nav className="hidden md:block bg-gray-700 py-4">
+        <ul className="flex justify-center space-x-4">
           <li>
-            <Link to="/Hardwood">Hardwood</Link>
+            <Link to="/Hardwood" className="text-white px-3 py-2 no-underline">
+              Hardwood
+            </Link>
           </li>
           <li>
-            <Link to="/Vinyl">Vinyl</Link>
+            <Link to="/Vinyl" className="text-white px-3 py-2 no-underline">
+              Vinyl
+            </Link>
           </li>
           <li>
-            <Link to="/Laminate">Laminate</Link>
+            <Link to="/Laminate" className="text-white px-3 py-2 no-underline">
+              Laminate
+            </Link>
           </li>
           <li>
-            <Link to="/Carpet">Carpet</Link>
+            <Link to="/Carpet" className="text-white px-3 py-2 no-underline">
+              Carpet
+            </Link>
           </li>
           <li>
-            <Link to="/Tiles">Tiles</Link>
+            <Link to="/Tiles" className="text-white px-3 py-2 no-underline">
+              Tiles
+            </Link>
           </li>
-          <li>
-            <Link to="#">Our services</Link>
-            <ul className="dropdown">
+          <li className="relative group">
+            <Link
+              to="/Installation"
+              className="text-white px-3 py-2 no-underline"
+            >
+              Our Services
+            </Link>
+            <ul className="hidden group-hover:block absolute top-full left-0 bg-gray-700 text-white mt-2 w-48 shadow-lg space-y-2 p-3">
               <li>
-                <Link to="#">Installation, removal and repair</Link>
+                <Link
+                  to="/Installation"
+                  className="no-underline block px-2 py-1"
+                >
+                  Installation, Removal, and Repair
+                </Link>
               </li>
               <li>
-                <Link to="#">Transport of goods</Link>
+                <Link
+                  to="/Installation"
+                  className="no-underline block px-2 py-1"
+                >
+                  Transport of Goods
+                </Link>
               </li>
             </ul>
           </li>
@@ -74,355 +545,3 @@ function Header() {
 }
 
 export default Header;
-// import React, { useState, useEffect } from "react";
-// import { MdOutlineLocalPhone, MdClose, MdMenu, MdSearch } from "react-icons/md";
-// import { AiOutlineShoppingCart } from "react-icons/ai";
-// import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-// import axios from "axios";
-
-// function Header() {
-//   const [isCartOpen, setIsCartOpen] = useState(false);
-//   const [cartItems, setCartItems] = useState([]);
-//   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-//   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
-
-//   useEffect(() => {
-//     const items = JSON.parse(localStorage.getItem("cartItems")) || [];
-//     setCartItems(items);
-//   }, [isCartOpen]);
-
-//   const toggleCart = () => {
-//     setIsCartOpen(!isCartOpen);
-//     setIsMobileMenuOpen(false);
-//   };
-
-//   const toggleMobileMenu = () => {
-//     setIsMobileMenuOpen(!isMobileMenuOpen);
-//     setIsCartOpen(false);
-//   };
-
-//   const removeFromCart = (id) => {
-//     const updatedItems = cartItems.filter((item) => item.id !== id);
-//     setCartItems(updatedItems);
-//     localStorage.setItem("cartItems", JSON.stringify(updatedItems));
-//   };
-
-//   const updateQuantity = (id, newQuantity) => {
-//     const updatedItems = cartItems
-//       .map((item) =>
-//         item.id === id ? { ...item, quantity: newQuantity } : item
-//       )
-//       .filter((item) => item.quantity > 0);
-//     setCartItems(updatedItems);
-//     localStorage.setItem("cartItems", JSON.stringify(updatedItems));
-//   };
-
-//   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-//   const totalAmount = cartItems
-//     .reduce((sum, item) => sum + item.salePrice * item.quantity, 0)
-//     .toFixed(2);
-
-//   const handleCheckout = () => {
-//     setIsCheckoutOpen(true);
-//     setIsCartOpen(false);
-//   };
-// const initialOptions = {
-//   "client-id": "YOUR_CLIENT_ID", // استبدل هذا بمعرف العميل الخاص بك
-//   currency: "USD",
-//   intent: "capture",
-// };
-// const handleBuyNow = async () => {
-//   try {
-//     const response = await axios.post(
-//       "http://localhost:5000/api/paypal/create-order",
-//       {
-   
-//          cartItems, 
-//          totalAmount, 
-//       }
-//     );
-//     console.log("Order created:", response.data);
-//     // Optionally, redirect the user to a confirmation page or show a success message
-//   } catch (error) {
-//     console.error("Error creating order:", error);
-//     // Optionally, show an error message to the user
-//   }
-// };
-//   return (
-//     <header className="sticky top-0 z-50 bg-white shadow-md">
-//       <div className="container mx-auto px-4">
-//         <div className="flex items-center justify-between py-4">
-//           <img
-//             src="/path-to-your-logo.png"
-//             alt="Logo"
-//             className="h-12 w-auto"
-//           />
-
-//           <a
-//             href="tel:4372650978"
-//             className="hidden md:flex items-center text-gray-600 hover:text-green-600 transition-colors"
-//           >
-//             <MdOutlineLocalPhone className="mr-2" />
-//             (437) 265-0978
-//           </a>
-
-//           <div className="flex items-center space-x-4">
-//             <div className="hidden md:block space-x-2">
-//               <a
-//                 href="/signup"
-//                 className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors"
-//               >
-//                 Sign Up
-//               </a>
-//               <a
-//                 href="/login"
-//                 className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors"
-//               >
-//                 Login
-//               </a>
-//               <button
-//                 onClick={toggleCart}
-//                 className="relative bg-green-600 text-white   w-12 hover:bg-green-700 transition-colors "
-//               >
-//                 <AiOutlineShoppingCart className="text-4xl" />
-//                 {totalItems > 0 && (
-//                   <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-6 flex items-center justify-center">
-//                     {totalItems}
-//                   </span>
-//                 )}
-//               </button>
-//             </div>
-
-//             <div className="relative hidden md:block">
-//               <MdSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-//               <input
-//                 type="text"
-//                 placeholder="Search..."
-//                 className="pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-//               />
-//             </div>
-
-//             <button
-//               onClick={toggleMobileMenu}
-//               className="md:hidden text-gray-600 hover:text-green-600 transition-colors"
-//             >
-//               <MdMenu className="text-2xl" />
-//             </button>
-//           </div>
-//         </div>
-
-//         <nav
-//           className={`${isMobileMenuOpen ? "block" : "hidden"} md:block py-4`}
-//         >
-//           <ul className="flex flex-col md:flex-row md:justify-center md:space-x-6">
-//             {["Home", "Hardwood", "Vinyl", "Laminate", "Carpet", "Tiles"].map(
-//               (item) => (
-//                 <li key={item} className="py-2 md:py-0">
-//                   <a
-//                     href={`/${item.toLowerCase()}`}
-//                     className="text-gray-600 hover:text-green-600 transition-colors"
-//                   >
-//                     {item}
-//                   </a>
-//                 </li>
-//               )
-//             )}
-//             <li className="relative group py-2 md:py-0">
-//               <a
-//                 href="#"
-//                 className="text-gray-600 hover:text-green-600 transition-colors"
-//               >
-//                 Our Services
-//               </a>
-//               <ul className="hidden group-hover:block absolute left-0 mt-2 w-48 bg-white shadow-md rounded-md">
-//                 <li>
-//                   <a
-//                     href="#"
-//                     className="block px-4 py-2 text-gray-800 hover:bg-green-100"
-//                   >
-//                     Installation, removal and repair
-//                   </a>
-//                 </li>
-//                 <li>
-//                   <a
-//                     href="#"
-//                     className="block px-4 py-2 text-gray-800 hover:bg-green-100"
-//                   >
-//                     Transport of goods
-//                   </a>
-//                 </li>
-//               </ul>
-//             </li>
-//           </ul>
-//         </nav>
-//       </div>
-
-//       {isCartOpen && (
-//         <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-//           <div className="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-xl flex flex-col">
-//             <div className="flex justify-between items-center p-4 border-b">
-//               <h2 className="text-xl font-semibold">Your Cart</h2>
-//               <button
-//                 onClick={toggleCart}
-//                 className="text-gray-500 hover:text-gray-700"
-//               >
-//                 <MdClose className="text-2xl" />
-//               </button>
-//             </div>
-
-//             <div className="flex-grow overflow-y-auto">
-//               {cartItems.length === 0 ? (
-//                 <p className="p-4 text-center text-gray-500">
-//                   Your cart is empty
-//                 </p>
-//               ) : (
-//                 <div className="p-4 space-y-4">
-//                   {cartItems.map((item) => (
-//                     <div
-//                       key={item.id}
-//                       className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg"
-//                     >
-//                       <img
-//                         src={item.url}
-//                         alt={item.name}
-//                         className="w-20 h-20 object-cover rounded"
-//                       />
-//                       <div className="flex-grow">
-//                         <h3 className="font-semibold text-gray-800">
-//                           {item.name}
-//                         </h3>
-//                         <p className="text-sm text-gray-600">
-//                           ${item.salePrice} / SQ.F.
-//                         </p>
-//                         <div className="flex items-center mt-2">
-//                           <button
-//                             onClick={() =>
-//                               updateQuantity(
-//                                 item.id,
-//                                 Math.max(1, item.quantity - 1)
-//                               )
-//                             }
-//                             className="text-gray-500 hover:text-gray-700 bg-gray-200 rounded-full w-6 h-6 flex items-center justify-center"
-//                           >
-//                             -
-//                           </button>
-//                           <span className="mx-2 text-gray-700">
-//                             {item.quantity}
-//                           </span>
-//                           <button
-//                             onClick={() =>
-//                               updateQuantity(item.id, item.quantity + 1)
-//                             }
-//                             className="text-gray-500 hover:text-gray-700 bg-gray-200 rounded-full w-6 h-6 flex items-center justify-center"
-//                           >
-//                             +
-//                           </button>
-//                         </div>
-//                       </div>
-//                       <button
-//                         onClick={() => removeFromCart(item.id)}
-//                         className="text-red-500 hover:text-red-700"
-//                       >
-//                         <MdClose />
-//                       </button>
-//                     </div>
-//                   ))}
-//                 </div>
-//               )}
-//             </div>
-
-//             <div className="p-4 border-t bg-gray-50">
-//               <div className="flex justify-between items-center mb-4">
-//                 <span className="font-semibold text-gray-700">Total:</span>
-//                 <span className="font-bold text-green-600 text-xl">
-//                   ${totalAmount}
-//                 </span>
-//               </div>
-//               <button
-//                 onClick={handleCheckout}
-//                 className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-//               >
-//                 Proceed to Checkout
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       )}
-
-//       {isCheckoutOpen && (
-//         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-//           <div className="bg-white p-8 rounded-lg w-full max-w-md">
-//             <div className="flex justify-between items-center mb-6">
-//               <h2 className="text-2xl font-semibold text-gray-800">Checkout</h2>
-//               <button
-//                 onClick={() => setIsCheckoutOpen(false)}
-//                 className="text-gray-500 hover:text-gray-700"
-//               >
-//                 <MdClose className="text-2xl" />
-//               </button>
-//             </div>
-
-//             <div className="mb-6">
-//               <h3 className="text-lg font-semibold text-gray-700 mb-3">
-//                 Order Summary
-//               </h3>
-//               {cartItems.map((item) => (
-//                 <div
-//                   key={item.id}
-//                   className="flex justify-between items-center mb-2"
-//                 >
-//                   <span className="text-gray-600">
-//                     {item.name} (x{item.quantity})
-//                   </span>
-//                   <span className="font-semibold">
-//                     ${(item.salePrice * item.quantity).toFixed(2)}
-//                   </span>
-//                 </div>
-//               ))}
-//               <div className="border-t border-gray-200 mt-4 pt-4">
-//                 <div className="flex justify-between items-center font-semibold">
-//                   <span className="text-gray-800">Total:</span>
-//                   <span className="text-green-600 text-xl">${totalAmount}</span>
-//                 </div>
-//               </div>
-//             </div>
-
-//             <PayPalScriptProvider options={initialOptions}>
-//               <div className="checkout-container">
-//                 <h2>Checkout</h2>
-//                 {/* <PayPalButtons
-//                   createOrder={(data, actions) => {
-//                     return actions.order.create({
-//                       purchase_units: [
-//                         {
-//                           amount: {
-//                             value: "100.00", // استبدل بالمبلغ المناسب
-//                           },
-//                         },
-//                       ],
-//                     });
-//                   }}
-//                   onApprove={async (data, actions) => {
-//                     const order = await actions.order.capture();
-//                     console.log("Order captured:", order);
-//                     // قم بتحويل المستخدم إلى صفحة تأكيد الدفع
-//                   }}
-//                   onError={(err) => {
-//                     console.error("Error during PayPal Checkout:", err);
-//                   }}
-//                 /> */}
-//                 <button
-//                   onClick={handleBuyNow}
-//                   className=" bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-//                 >
-//                   Buy Now
-//                 </button>
-//               </div>
-//             </PayPalScriptProvider>
-//           </div>
-//         </div>
-//       )}
-//     </header>
-//   );
-// }
-// export default Header;

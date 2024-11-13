@@ -8,6 +8,7 @@ const categoryRoutes = require("./routes/category");
 const userRoutes = require("./routes/userRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const contactRoutes = require("./routes/contactRoutes");
+const statsRoutes = require("./routes/statsRoutes");
 
 
 dotenv.config();
@@ -23,6 +24,7 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api", orderRoutes);
 app.use("/api", contactRoutes);
+app.use("/api/stats", statsRoutes);
 
 
 

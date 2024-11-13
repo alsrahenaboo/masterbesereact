@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function OrderSuccess() {
+   localStorage.removeItem("cartItems");
   const navigate = useNavigate();
 
   useEffect(() => {

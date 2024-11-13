@@ -17,6 +17,8 @@ function Checkout() {
     localStorage.removeItem("cartItems");
     localStorage.removeItem("checkoutItems");
     navigate("/payment-success");
+    
+
   };
 
   const total = checkoutItems.reduce(

@@ -1,4 +1,5 @@
 const Contact = require("../models/contact");
+const nodemailer = require("nodemailer");
 
 // Get all contacts
 exports.getContacts = async (req, res) => {
@@ -71,3 +72,5 @@ exports.toggleActiveStatus = async (req, res) => {
       .json({ message: "Failed to toggle status", error: error.message });
   }
 };
+
+
